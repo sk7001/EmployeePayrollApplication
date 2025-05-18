@@ -51,12 +51,10 @@ This version uses **MySQL** (not H2), allowing real-world scalability and integr
 
 ## Database Configuration
 
-Update your `application.properties` with your MySQL connection details:
+Update your `application.properties` file with your MySQL connection details:
 
+```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/employee_db
 spring.datasource.username=root
 spring.datasource.password=yourpassword
 spring.jpa.hibernate.ddl-auto=update
-
-
----
