@@ -3,6 +3,9 @@ package com.example.employeepayrollapp.controller;
 import com.example.employeepayrollapp.dto.EmployeeDTO;
 import com.example.employeepayrollapp.model.Employee;
 import com.example.employeepayrollapp.service.EmployeeService;
+
+import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,12 +30,12 @@ public class EmployeePayrollController {
     }
 
     @PostMapping("/create")
-    public Employee createEmployee(@RequestBody EmployeeDTO dto) {
+    public Employee createEmployee(@Valid @RequestBody EmployeeDTO dto) {
         return service.saveEmployee(dto);
     }
 
     @PutMapping("/update/{id}")
-    public Employee updateEmployee(@PathVariable Long id, @RequestBody EmployeeDTO dto) {
+    public Employee updateEmployee(@PathVariable Long id, @Valid @RequestBody EmployeeDTO dto) {
         return service.updateEmployee(id, dto);
     }
 
